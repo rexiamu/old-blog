@@ -19,6 +19,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.HEXO_DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
           BRANCH: main # The branch the action should deploy to.
           FOLDER: public # The folder the action should deploy.
