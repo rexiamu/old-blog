@@ -20,7 +20,6 @@ categories:
 不使用统一的配置，对请求进行单独设置。
 
 ```js
-
 const formData = new FormData();
 formData.append('file', file);
 formData.append('title', '文件');
@@ -36,5 +35,4 @@ this.$axios({
   .then(function (res) {
     ...
   })
-  
 ```
