@@ -34,8 +34,8 @@ setTimeout(() => {
   console.log("C");
 }, 1000);
 
-// 我们期望的是按顺序输出 A => B => C
-// 但实际结果确实 C => B => A
+// 期望输出 A => B => C
+// 实际输出 C => B => A
 ```
 使用后：
 ```javascript
@@ -71,5 +71,6 @@ async function print() {
 
 print();
 
-// 实际结果确实 A => B => C
+// 期望输出 A => B => C
+// 实际输出 A => B => C
 ```
