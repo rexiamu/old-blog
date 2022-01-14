@@ -47,10 +47,21 @@ git config --global user.email rexiamu@gmail.com
 操作说明：
 
 ```bash
-git add .         # 提交修改到暂存区
-git commit        # 提交暂存区到本地仓库
-git push          # 上传代码至远程仓库并合并
-git pull          # 拉取远程仓库代码并合并
-git checket       # 检出，创建分支、切换分支
-git clone         # 克隆远程仓库代码
+git add .                       # 提交修改到暂存区（. 表示当前目录下所有文件，提交指定文件时写成指定文件路径，如：./files/1.txt）
+git commit -m 'update'          # 提交暂存区到本地仓库（'update':注释内容）
+git push                        # 上传代码至远程仓库并合并
+git pull                        # 拉取远程仓库代码并合并
+git checket                     # 检出，创建分支、切换分支
+git clone                       # 克隆远程仓库代码
+```
+
+## 常用操作
+```bash
+git init                        # 在当前目录创建仓库
+git status                      # 查看文件状态
+git diff                        # 查看未缓存的改变
+git diff --cached               # 查看未提交的缓存
+git commit -a -m 'update'       # 将修改提交到缓存并且提交到本地仓库
+git restore --staged .          # git add . 的逆向操作，将缓存内容清空
+git log --oneline               # 查看 git commit 历史记录（--oneline：在一行显示）
 ```
