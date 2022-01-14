@@ -47,7 +47,7 @@ git config --global user.email rexiamu@gmail.com
 操作说明：
 
 ```bash
-git add           # 添加文件到暂存区
+git add .         # 提交修改到暂存区
 git commit        # 提交暂存区到本地仓库
 git push          # 上传代码至远程仓库并合并
 git pull          # 拉取远程仓库代码并合并
