@@ -61,7 +61,7 @@ git init                        # 在当前目录创建仓库
 git status                      # 查看文件状态
 git diff                        # 查看未缓存的改变
 git diff --cached               # 查看未提交的缓存
-git commit -a -m 'update'       # 将修改提交到缓存并且提交到本地仓库
+git commit -a -m 'update'       # 将修改提交到缓存并且提交到本地仓库（必须是已经跟踪过的文件）
 git restore --staged .          # git add . 的逆向操作，将缓存内容清空
 git log --oneline               # 查看 git commit 历史记录（--oneline：在一行显示）
 ```
