@@ -39,7 +39,7 @@ module.exports = {
 
 ```js
 module.exports = { 
-  mode: 'development'
+  mode: 'development',
 }
 ```
 
