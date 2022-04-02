@@ -26,8 +26,8 @@ chainWebpack(config) {
   config
     .plugin('define')
     .tap(args => {
-      args[0]['second_timestamp'] = JSON.stringify(new Date().getTime().toString().slice(0, 10))
-      args[0]['QWE'] = JSON.stringify('QWE')
+      args[0]['SECOND_TIMESTAMP'] = JSON.stringify(new Date().getTime().toString().slice(0, 10))
+      args[0]['GLOBAL_VAR'] = JSON.stringify('GLOBAL_VAR')
       return args
     })
 }
@@ -39,8 +39,8 @@ chainWebpack(config) {
 // vue 文件中使用
 data(){
   return {
-    second_timestamp,
-    QWE
+    SECOND_TIMESTAMP,
+    GLOBAL_VAR
   }
 }
 ```
