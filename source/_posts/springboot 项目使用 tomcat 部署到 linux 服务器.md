@@ -127,3 +127,13 @@ nohup ./startup.sh &
 ```
 
 完成！
+
+## 问题记录
+
+1. 重启 tomcat 失败，报错 stopping Catalina ...  Connection refused
+
+> 解决方案：
+> 1. `ps aux | grep tomcat` 查看 tomcat 所占用的端口
+> 2. `kill -9 进程号` 依次关闭进程 
+> 3. `nohup ./startup.sh &` 重启服务
+
