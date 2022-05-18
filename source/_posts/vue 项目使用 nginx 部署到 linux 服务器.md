@@ -23,7 +23,7 @@ categories:
 
 ```conf
 server {
-  listen       80 ssl; # 80 端口号    ssl 开启HTTPS
+  listen       443 ssl; # 443 端口号    ssl 开启HTTPS
   server_name  www.baidu.com; # 域名
   ssl_certificate /usr/local/nginx/cert/www.baidu.com.pem;     # 证书文件
   ssl_certificate_key /usr/local/nginx/cert/www.baidu.com.key; # 证书文件
