@@ -3,7 +3,7 @@
   <entry>
     <title>Github Actions 实践</title>
     <url>/2022/02/18/Github%20Actions%20%E5%AE%9E%E8%B7%B5/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220218143434.png" alt="github"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/B4JcMuPfEwxlVtN.png" alt="github"></p>
 <p><a href="https://docs.github.com/cn/actions">GitHub Actions</a> 是一个持续集成和持续交付(CI/CD)的平台，它允许你自动化构建、测试和部署管道。您可以创建工作流来构建和测试存储库中的每个pull请求，或者将合并的pull请求部署到生产中。</p>
 <span id="more"></span>
 
@@ -37,7 +37,7 @@
   <entry>
     <title>Promise + async + await 实现异步代码按顺序执行</title>
     <url>/2022/01/13/Promise%20+%20async%20+%20await%20%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%A3%E7%A0%81%E6%8C%89%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220113135506.png" alt="期望的执行流程"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/DpsoZ7NI3fe89Ul.png" alt="期望的执行流程"></p>
 <p>在实际的工作中，我们常常会碰到这样的场景：调用接口 A  返回数据 a ，使用数据 a 作为请求参数调用接口 B 返回数据 b ，再使用数据 b 作为请求参数调用接口 C … </p>
 <span id="more"></span>
 
@@ -61,7 +61,7 @@
   <entry>
     <title>git 配置与使用</title>
     <url>/2021/11/22/git%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160438.png" alt="git"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/VH8tAsJ9pziDgWG.png" alt="git"></p>
 <p><a href="https://git-scm.com/book/zh/v2">Git</a> 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
 <span id="more"></span>
 
@@ -72,7 +72,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;rexiamu&quot;</span></span><br><span class="line">git config --global user.email rexiamu@gmail.com</span><br></pre></td></tr></table></figure>
 
 <p>执行 <code>git config --list</code> 命令，出现用户名和邮件地址信息说明配置成功。</p>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160702.png" alt="git工作流程"></p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p><img src="https://s2.loli.net/2022/05/31/QiFVCX8EDLH2fek.png" alt="git工作流程"></p>
 <p>区域说明：</p>
 <ul>
 <li>workspace：工作区。即我们所能看到的，编辑文件的地方。</li>
@@ -96,7 +96,7 @@
   <entry>
     <title>javascript 之原型与原型链</title>
     <url>/2022/03/30/javascript%20%E4%B9%8B%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220330130430.png" alt="javascript 原型链示意图"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/69KCWqup3kliXdY.png" alt="javascript 原型链示意图"></p>
 <p>在 java 语言中使用类的继承进行面向对象编程，而在 javaScript 语言中则是使用原型及原型链的方式进行面向对象编程。</p>
 <span id="more"></span>
 
@@ -137,7 +137,7 @@
   <entry>
     <title>springboot 项目使用 tomcat 部署到 linux 服务器</title>
     <url>/2022/04/02/springboot%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%20tomcat%20%E9%83%A8%E7%BD%B2%E5%88%B0%20linux%20%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402134323.jpg" alt="tomcat"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/dYrjIsCTQBR3hFw.webp" alt="tomcat"></p>
 <p><strong>springboot</strong> 项目打包 <strong>war</strong> 包，通过 <strong>tomcat</strong> 部署。 </p>
 <span id="more"></span>
 
@@ -221,7 +221,7 @@
   <entry>
     <title>vue 项目使用 nginx 部署到 linux 服务器</title>
     <url>/2022/04/02/vue%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%20nginx%20%E9%83%A8%E7%BD%B2%E5%88%B0%20linux%20%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402160643.jpg" alt="nginx"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/BEuZd82ec3MVKy7.webp" alt="nginx"></p>
 <p><strong>vue</strong> 通过 <strong>nginx</strong> 部署。 </p>
 <span id="more"></span>
 
@@ -274,7 +274,7 @@
   <entry>
     <title>webpack 配置与使用</title>
     <url>/2021/12/13/webpack%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211213144846.png" alt="webpack"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/1QvbicSCT5ONxRK.png" alt="webpack"></p>
 <p>本质上，<strong>webpack</strong> 是一个用于现代 JavaScript 应用程序的 <em>静态模块打包工具</em>。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 <a href="https://webpack.docschina.org/concepts/dependency-graph/">依赖图(dependency graph)</a>，然后将你项目中所需的每一个模块组合成一个或多个 <em>bundles</em>，它们均为静态资源，用于展示你的内容。</p>
 <span id="more"></span>
 
@@ -330,7 +330,7 @@
   <entry>
     <title>前端开发规范</title>
     <url>/2021/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122164127.jpeg" alt="前端代码开发规范"></p>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/1y28cGVIlbJhLFB.jpg" alt="前端代码开发规范"></p>
 <p>为实现代码一致性和最佳实践，通过代码风格的一致性，降低维护代码的成本以及改善多人协作的效率。同时遵守最佳实践，确保页面性能得到最佳优化和高效的代码。</p>
 <span id="more"></span>
 
