@@ -290,9 +290,9 @@ related_posts:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
-  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
+  enable: true
+  #url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
+  url: https://github.com/rexiamu/rexiamu.github.io/edit/my-blog/source/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
 # Available values: left | right | false
@@ -380,7 +380,7 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: left | right
   start_at: left
   # Available values: top | bottom
@@ -571,7 +571,7 @@ comments:
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
-  lazyload: false
+  lazyload: true
   # Modify texts or order for any naves, here are some examples.
   nav:
     #disqus:
@@ -688,8 +688,8 @@ cloudflare_analytics:
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: 
-  app_key: 
+  app_id:
+  app_key:
   # Required for apps from CN region
   server_url: # <your server url>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
@@ -831,7 +831,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: true
+  enable: false
   async: false
   transition:
     # All available transition variants: https://theme-next.js.org/animate/
@@ -845,7 +845,7 @@ motion:
 # Progress bar in the top during page loading.
 # For more information: https://github.com/CodeByZach/pace
 pace:
-  enable: false
+  enable: true
   # All available colors:
   # black | blue | green | orange | pink | purple | red | silver | white | yellow
   color: blue
@@ -876,7 +876,7 @@ vendors:
   # The default CDN provider of third-party plugins.
   # Available values: local | jsdelivr | unpkg | cdnjs
   # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-  plugins: cdnjs
+  plugins: unpkg
 
 # Assets
 # Accelerate delivery of static files using a CDN
