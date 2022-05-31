@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>git 配置与使用</title>
+    <url>/2021/11/22/git%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160438.png" alt="git"></p>
+<p><a href="https://git-scm.com/book/zh/v2">Git</a> 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
+<span id="more"></span>
+
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>地址：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p>安装好之后右击桌面或其他空白处，出现 <code>Git GUI Here</code> 和 <code>Git Bash Here</code> 这两个选项，选中 <code>Git Bash Here</code> 出现 git 命令窗口，后续的 git 命令在此执行。</p>
+<p>执行 <code>git --version</code> 命令，出现版本号信息说明安装成功。</p>
+<h2 id="用户信息配置"><a href="#用户信息配置" class="headerlink" title="用户信息配置"></a>用户信息配置</h2><p>设置用户名和邮件地址，这一点很重要，因为每一个 Git 提交都会使用这些信息。 <code>--global</code> 代表全局配置。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;rexiamu&quot;</span></span><br><span class="line">git config --global user.email rexiamu@gmail.com</span><br></pre></td></tr></table></figure>
+
+<p>执行 <code>git config --list</code> 命令，出现用户名和邮件地址信息说明配置成功。</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160702.png" alt="git工作流程"></p>
+<p>区域说明：</p>
+<ul>
+<li>workspace：工作区。即我们所能看到的，编辑文件的地方。</li>
+<li>staging area：暂存区。每次的小修改我们可以先暂时放在这里，积累到一定程度时，再提交到本地仓库。</li>
+<li>local repository：本地仓库。git 分布式系统中我们在本地保存的仓库。</li>
+<li>remote repository：远程仓库。通常为放在代码管理平台上的仓库，许多人共同维护。</li>
+</ul>
+<p>操作说明：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                       <span class="comment"># 提交修改到暂存区（. 表示当前目录下所有文件，提交指定文件时写成指定文件路径，如：./files/1.txt）</span></span><br><span class="line">git commit -m <span class="string">&#x27;update&#x27;</span>          <span class="comment"># 提交暂存区到本地仓库（&#x27;update&#x27;:注释内容）</span></span><br><span class="line">git push                        <span class="comment"># 上传代码至远程仓库并合并</span></span><br><span class="line">git pull                        <span class="comment"># 拉取远程仓库代码并合并</span></span><br><span class="line">git checket                     <span class="comment"># 检出，创建分支、切换分支</span></span><br><span class="line">git <span class="built_in">clone</span>                       <span class="comment"># 克隆远程仓库代码</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init                        <span class="comment"># 在当前目录创建仓库</span></span><br><span class="line">git status                      <span class="comment"># 查看文件状态</span></span><br><span class="line">git diff                        <span class="comment"># 查看未缓存的改变</span></span><br><span class="line">git diff --cached               <span class="comment"># 查看未提交的缓存</span></span><br><span class="line">git commit -a -m <span class="string">&#x27;update&#x27;</span>       <span class="comment"># 将修改提交到缓存并且提交到本地仓库（必须是已经跟踪过的文件）</span></span><br><span class="line">git restore --staged .          <span class="comment"># git add . 的逆向操作，将缓存内容清空</span></span><br><span class="line">git <span class="built_in">log</span> --oneline               <span class="comment"># 查看 git commit 历史记录（--oneline：在一行显示）</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript 之原型与原型链</title>
+    <url>/2022/03/30/javascript%20%E4%B9%8B%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220330130430.png" alt="javascript 原型链示意图"></p>
+<p>在 java 语言中使用类的继承进行面向对象编程，而在 javaScript 语言中则是使用原型及原型链的方式进行面向对象编程。</p>
+<span id="more"></span>
+
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>原型可以理解为实例对象的抽象，通过构造函数进行创建。</p>
+<ul>
+<li>实例对象通过 <code>__proto__</code> 属性访问原型对象</li>
+<li>构造函数通过 <code>prototype</code> 属性访问原型对象</li>
+<li>原型对象通过 <code>constructor</code> 属性访问构造函数 </li>
+<li>在使用我们所定义的构造函数时会自动创建原型对象（使用 <code>new Object()</code> 创建），<br>所以实例对象的原型的原型其实就是 <code>Object.prototype</code></li>
+<li>12</li>
+</ul>
+<h3 id="ES5-例子"><a href="#ES5-例子" class="headerlink" title="ES5 例子"></a>ES5 例子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 定义原型方法</span></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;你好：&quot;</span> + <span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用构造函数创建实例</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p); <span class="comment">// Person &#123; name: &#x27;张三&#x27;, age: 18 &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(p.__proto__ === Person.prototype); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true </span></span><br><span class="line">p.say(); <span class="comment">// 你好：张三</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ES6-例子"><a href="#ES6-例子" class="headerlink" title="ES6 例子"></a>ES6 例子</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 创建类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name, age</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">say</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;你好：&quot;</span> + <span class="built_in">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建实例</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person(<span class="string">&quot;李四&quot;</span>, <span class="number">19</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p); <span class="comment">// Person &#123; name: &#x27;李四&#x27;, age: 19 &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(p.__proto__ === Person.prototype); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true </span></span><br><span class="line">p.say(); <span class="comment">// 你好：李四</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>当我们访问一个对象的属性时，首先会查看该实例对象是否有此属性，如果没有则会查看它的原型对象，如果还没有则会查看其原型对象的原型对象。<br>该过程会一直查下去，直到查到此属性或者查到 <code>Object.prototype</code> 的 <code>__proto__</code> 属性（值为 null 停止查找），如此便形成了原型链。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>每个构造函数对应一个原型对象，通过 <code>prototype</code> 属性访问</li>
+<li>每个原型对象对应一个构造函数，通过 <code>constructor</code> 属性访问</li>
+<li>每个实例对象通过 <code>__proto__</code> 属性访问其原型对象</li>
+<li>实例对象的 <code>_proto</code> 属性和构造函数的 <code>prototype</code> 属性共同指向原型对象</li>
+<li>构造函数 <code>function Object()</code> 的原型对象 <code>Object.prototype</code> 没有原型对象，<br>即原型对象 <code>Object.prototype</code> 的 <code>__proto__</code> 属性为 <code>null</code></li>
+<li>所有的构造函数的原型 <code>__proto__</code> 属性指向原型对象 <code>Function.prototype</code> </li>
+<li>原型对象 <code>Function.prototype</code> 的原型 <code>__proto__</code> 属性指向原型对象 <code>Object.prototype</code></li>
+<li>原型对象 <code>Function.prototype</code> 的 <code>constructor</code> 属性指向构造函数 <code>function Function()</code></li>
+<li><code>javascript</code> 语言在初始化时会自动创建 <code>function Object()</code> 和 <code>function Function()</code> 以及他们各自的原型对象，<br>同时建立它们之间的引用关系</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>原型</tag>
+        <tag>原型链</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github Actions 实践</title>
+    <url>/2022/02/18/Github%20Actions%20%E5%AE%9E%E8%B7%B5/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220218143434.png" alt="github"></p>
+<p><a href="https://docs.github.com/cn/actions">GitHub Actions</a> 是一个持续集成和持续交付(CI/CD)的平台，它允许你自动化构建、测试和部署管道。您可以创建工作流来构建和测试存储库中的每个pull请求，或者将合并的pull请求部署到生产中。</p>
+<span id="more"></span>
+
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="workflow"><a href="#workflow" class="headerlink" title="workflow"></a>workflow</h3><p>workflow 是指由多个步骤所组成的一个完整的工作流程，例如：安装依赖 &gt; 项目打包 &gt; 项目部署。</p>
+<h3 id="name"><a href="#name" class="headerlink" title="name"></a>name</h3><p>工作流程的名称，此名称会在 actions 运行时显示在 actions 面板中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 例子</span><br><span class="line">name: CI</span><br></pre></td></tr></table></figure>
+
+<h3 id="on"><a href="#on" class="headerlink" title="on"></a>on</h3><p>触发工作流程的事件，可以是一个，也可以是多个。此外，可指定触发事件的代码分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 监听一个事件</span><br><span class="line">on: push</span><br><span class="line"></span><br><span class="line"># 监听多个事件</span><br><span class="line">on: [push, pull_request]</span><br><span class="line"></span><br><span class="line"># 监 main 分支的 push 事件</span><br><span class="line">on:</span><br><span class="line">  push:</span><br><span class="line">    branches:</span><br><span class="line">      - main</span><br></pre></td></tr></table></figure>
+
+<h3 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h3><p>任务，一个工作流由一个或多个任务组成，是一些列步骤的集合。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">jobs:</span><br><span class="line">  main: # 任务名称</span><br><span class="line">    runs-on: ubuntu-latest # 运行环境</span><br><span class="line">    steps: # 任务的步骤</span><br><span class="line">    </span><br><span class="line">    - name: Checkout # 步骤1</span><br><span class="line">      uses: actions/checkout@v2 # 检出代码到工作流环境中</span><br><span class="line">      with: # 参数配置</span><br><span class="line">        persist-credentials: false</span><br><span class="line">        </span><br><span class="line">    - name: Install # 步骤2</span><br><span class="line">      run: npm install</span><br><span class="line">      </span><br><span class="line">    - name: Build # 步骤3</span><br><span class="line">      run: npm run build</span><br><span class="line">      </span><br><span class="line">    - name: Deploy # 步骤4</span><br><span class="line">      uses: JamesIves/github-pages-deploy-action@releases/v3</span><br><span class="line">      with:</span><br><span class="line">        ACCESS_TOKEN: $&#123;&#123; secrets.ACCESS_TOKEN &#125;&#125; # 项目环境参数。在项目的 settings &gt; Security &gt; secrets &gt; Actions 中配置。</span><br><span class="line">        BRANCH: gh-pages</span><br><span class="line">        FOLDER: dist</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<h2 id="市场"><a href="#市场" class="headerlink" title="市场"></a>市场</h2><p>在 <a href="https://github.com/marketplace?category=&query=&type=actions&verification=">Github Actions 市场</a> 中可以找到他人发布的 Actions 供自己使用。</p>
+<h2 id="常用模板"><a href="#常用模板" class="headerlink" title="常用模板"></a>常用模板</h2><h3 id="Vue-项目上传并部署-pages"><a href="#Vue-项目上传并部署-pages" class="headerlink" title="Vue 项目上传并部署 pages"></a>Vue 项目上传并部署 pages</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: CI # 工作流名称</span><br><span class="line">on:</span><br><span class="line">  push: # 触发事件</span><br><span class="line">    branches:</span><br><span class="line">      - main # 指定分支</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  main:</span><br><span class="line">    runs-on: ubuntu-latest # 运行环境</span><br><span class="line">    steps:</span><br><span class="line">    - name: Checkout</span><br><span class="line">      uses: actions/checkout@v2 # 检出代码到运行环境</span><br><span class="line">      with:</span><br><span class="line">        persist-credentials: false # 是否使用本地git config配置令牌或SSH密钥</span><br><span class="line">        </span><br><span class="line">    # 安装依赖</span><br><span class="line">    - name: Install</span><br><span class="line">      run: npm install</span><br><span class="line">    </span><br><span class="line">    # 打包</span><br><span class="line">    - name: Build</span><br><span class="line">      run: npm run build</span><br><span class="line">     </span><br><span class="line">    # 部署 pages  </span><br><span class="line">    - name: Deploy</span><br><span class="line">      uses: JamesIves/github-pages-deploy-action@releases/v3</span><br><span class="line">      with:</span><br><span class="line">        ACCESS_TOKEN: $&#123;&#123; secrets.ACCESS_TOKEN &#125;&#125; # 在项目中配置 ACCESS_TOKEN</span><br><span class="line">        BRANCH: gh-pages</span><br><span class="line">        FOLDER: dist</span><br></pre></td></tr></table></figure>
+
+<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: CheckIn</span><br><span class="line"></span><br><span class="line"># 环境变量</span><br><span class="line">env:</span><br><span class="line">  COOKIE: $&#123;&#123; secrets.COOKIE &#125;&#125;</span><br><span class="line">  PASS: $&#123;&#123; secrets.PASS &#125;&#125;</span><br><span class="line">  EMAIL: $&#123;&#123; secrets.EMAIL &#125;&#125;</span><br><span class="line">  SERVICE: $&#123;&#123; secrets.SERVICE &#125;&#125;</span><br><span class="line"></span><br><span class="line">on:</span><br><span class="line">  # 手动触发</span><br><span class="line">  workflow_dispatch:</span><br><span class="line"></span><br><span class="line">  # 定时执行</span><br><span class="line">  schedule:</span><br><span class="line">    # 每天9点执行 时间格式 minute hour day month week 设置的时间是UTC 不是北京时间 需要+8</span><br><span class="line">    - cron: &quot;0 1 * * *&quot;</span><br><span class="line"></span><br><span class="line">jobs:</span><br><span class="line">  start:</span><br><span class="line">    # 运行环境为最新版的Ubuntu</span><br><span class="line">    runs-on: ubuntu-latest</span><br><span class="line"></span><br><span class="line">    steps:</span><br><span class="line">      - uses:</span><br><span class="line">          actions/checkout@v2</span><br><span class="line">      </span><br><span class="line">      # 安装node.js</span><br><span class="line">      - name: Setup Node.js</span><br><span class="line">        uses: actions/setup-node@v2</span><br><span class="line">        with:</span><br><span class="line">          node-version: &quot;14&quot;</span><br><span class="line"></span><br><span class="line">      # 安装依赖</span><br><span class="line">      - name: npm install</span><br><span class="line">        run: npm install</span><br><span class="line">        </span><br><span class="line">      # 执行脚本</span><br><span class="line">      - name: Start task</span><br><span class="line">        run: node index.js</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>Github Actions</tag>
+        <tag>CI</tag>
+        <tag>CD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>springboot 项目使用 tomcat 部署到 linux 服务器</title>
+    <url>/2022/04/02/springboot%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%20tomcat%20%E9%83%A8%E7%BD%B2%E5%88%B0%20linux%20%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402134323.jpg" alt="tomcat"></p>
+<p><strong>springboot</strong> 项目打包 <strong>war</strong> 包，通过 <strong>tomcat</strong> 部署。 </p>
+<span id="more"></span>
+
+<h2 id="打包前的配置"><a href="#打包前的配置" class="headerlink" title="打包前的配置"></a>打包前的配置</h2><ol>
+<li>将 <strong>springboot</strong> 项目打包方式改为 <strong>war</strong></li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pom.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>多模块排除内置 <strong>tomcat</strong></li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pom.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-tomcat<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改文件路径</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># application.yml</span></span><br><span class="line"><span class="comment"># 文件路径 示例（ Windows配置D:/projectName/uploadPath，Linux配置 /home/projectName/uploadPath）</span></span><br><span class="line"><span class="attr">profile:</span> <span class="string">/home/projectName/uploadPath</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>修改 <strong>redis</strong> 端口号</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># application.yml</span></span><br><span class="line"><span class="comment"># redis 配置</span></span><br><span class="line"><span class="attr">redis:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">6666</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>打包</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mvn clean package -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="tomcat-配置"><a href="#tomcat-配置" class="headerlink" title="tomcat 配置"></a>tomcat 配置</h2><ol>
+<li><p>将 <code>war</code> 包放在 <code>webapps</code> 目录中</p>
+</li>
+<li><p>修改 <code>conf\server.xml</code> 文件，新增项目的配置信息，多个项目可配置多个（指定不同的端口号和文件路径）</p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- server.xml--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Service</span> <span class="attr">name</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8888&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">protocol</span>=<span class="string">&quot;HTTP/1.1&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">SSLEnabled</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">scheme</span>=<span class="string">&quot;https&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">secure</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">keystoreFile</span>=<span class="string">&quot;/usr/local/tomcat/cert/www.baidu.com.pfx&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">keystoreType</span>=<span class="string">&quot;PKCS12&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">keystorePass</span>=<span class="string">&quot;123456&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">clientAuth</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">SSLProtocol</span>=<span class="string">&quot;TLSv1+TLSv1.1+TLSv1.2&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">ciphers</span>=<span class="string">&quot;TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">Engine</span> <span class="attr">defaultHost</span>=<span class="string">&quot;localhost&quot;</span> <span class="attr">name</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Realm</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.realm.LockOutRealm&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Realm</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.realm.UserDatabaseRealm&quot;</span></span></span><br><span class="line"><span class="tag">      <span class="attr">resourceName</span>=<span class="string">&quot;UserDatabase&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Realm</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">&quot;localhost&quot;</span> <span class="attr">appBase</span>=<span class="string">&quot;webapps&quot;</span> <span class="attr">unpackWARs</span>=<span class="string">&quot;true&quot;</span> <span class="attr">autoDeploy</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">docBase</span>=<span class="string">&quot;projectName&quot;</span> <span class="attr">reloadable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">crossContext</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.valves.AccessLogValve&quot;</span> <span class="attr">directory</span>=<span class="string">&quot;logs&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">prefix</span>=<span class="string">&quot;localhost_access_log&quot;</span> <span class="attr">suffix</span>=<span class="string">&quot;.txt&quot;</span> <span class="attr">pattern</span>=<span class="string">&quot;%h %l %u %t <span class="symbol">&amp;quot;</span>%r<span class="symbol">&amp;quot;</span> %s %b&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.valves.RemoteIpValve&quot;</span> <span class="attr">remoteIpHeader</span>=<span class="string">&quot;X-Forwarded-For&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">protocolHeader</span>=<span class="string">&quot;X-Forwarded-Proto&quot;</span> <span class="attr">protocolHeaderHttpsValue</span>=<span class="string">&quot;https&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Engine</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Service</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;Service name=&quot;projectName&quot;&gt;</code> 项目名称</li>
+<li><code>&lt;Connector port=&quot;8888&quot;</code> 端口号</li>
+<li><code>keystoreFile=&quot;/usr/local/tomcat/cert/www.baidu.com.pfx&quot;</code> 证书文件地址</li>
+<li><code>keystoreType=&quot;PKCS12&quot;</code> 证书类型</li>
+<li><code>keystorePass=&quot;123456&quot;</code> 证书密码</li>
+<li><code>&lt;Context path=&quot;/&quot; docBase=&quot;projectName&quot;</code> 文件路径与文件名称</li>
+</ul>
+<h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><p>在 <code>bin</code> 目录中执行</p>
+<ol>
+<li>停止当前服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./shutdown.sh</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>开启服务</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nohup ./startup.sh &amp;</span><br></pre></td></tr></table></figure>
+
+<p>完成！</p>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><ol>
+<li>重启 tomcat 失败，报错 stopping Catalina …  Connection refused</li>
+</ol>
+<blockquote>
+<p>解决方案：</p>
+<ol>
+<li><code>ps aux | grep tomcat</code> 查看 tomcat 所占用的端口</li>
+<li><code>kill -9 进程号</code> 依次关闭进程 </li>
+<li><code>nohup ./startup.sh &amp;</code> 重启服务</li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>tomcat</tag>
+        <tag>springboot</tag>
+        <tag>java</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Promise + async + await 实现异步代码按顺序执行</title>
+    <url>/2022/01/13/Promise%20+%20async%20+%20await%20%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%A3%E7%A0%81%E6%8C%89%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220113135506.png" alt="期望的执行流程"></p>
+<p>在实际的工作中，我们常常会碰到这样的场景：调用接口 A  返回数据 a ，使用数据 a 作为请求参数调用接口 B 返回数据 b ，再使用数据 b 作为请求参数调用接口 C … </p>
+<span id="more"></span>
+
+<p>但是实际的执行情况可能并不如我们所愿。因为 ajax 请求是异步的，这意味着如果你没做处理，这几个请求会一起执行。而请求执行需要时间，这样一来后面的请求可能因为拿不到参数导致错误。</p>
+<p>ES6 之后，出现了 Promise 和 async/await 这样的异步解决方案，我们可以使用它们实现异步代码按顺序执行。下面以三个定时器来模拟异步操作。<br /></p>
+<p>使用前：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">&#125;, <span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 期望输出 A =&gt; B =&gt; C</span></span><br><span class="line"><span class="comment">// 实际输出 C =&gt; B =&gt; A</span></span><br></pre></td></tr></table></figure>
+<p>使用后：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">re, rj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      re(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">3000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">re, rj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      re(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">re, rj</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      re(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> printA().then(<span class="built_in">console</span>.log);</span><br><span class="line">  <span class="keyword">await</span> printB().then(<span class="built_in">console</span>.log);</span><br><span class="line">  <span class="keyword">await</span> printC().then(<span class="built_in">console</span>.log);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 期望输出 A =&gt; B =&gt; C</span></span><br><span class="line"><span class="comment">// 实际输出 A =&gt; B =&gt; C</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Promise</tag>
+        <tag>async</tag>
+        <tag>await</tag>
+        <tag>异步</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue 项目使用 nginx 部署到 linux 服务器</title>
+    <url>/2022/04/02/vue%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%20nginx%20%E9%83%A8%E7%BD%B2%E5%88%B0%20linux%20%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402160643.jpg" alt="nginx"></p>
+<p><strong>vue</strong> 通过 <strong>nginx</strong> 部署。 </p>
+<span id="more"></span>
+
+<ol>
+<li><p>将打包好的文件放在 <strong>nginx</strong> 的 <strong>html</strong> 目录中</p>
+</li>
+<li><p>修改 <code>conf/nginx.conf</code> 文件，新增项目的配置信息，多个项目可配置多个（指定不同的端口号和文件路径）</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen       443 ssl; # 443 端口号    ssl 开启HTTPS</span><br><span class="line">  server_name  www.baidu.com; # 域名</span><br><span class="line">  ssl_certificate /usr/local/nginx/cert/www.baidu.com.pem;     # 证书文件</span><br><span class="line">  ssl_certificate_key /usr/local/nginx/cert/www.baidu.com.key; # 证书文件</span><br><span class="line">  charset utf-8;</span><br><span class="line"></span><br><span class="line">  location / &#123;</span><br><span class="line">    root   /usr/local/nginx/html/projectName; # 前端打包文件</span><br><span class="line">    try_files $uri $uri/ /index.html;</span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  location /prod-api/ &#123; # 代理地址</span><br><span class="line">    proxy_set_header Host $http_host;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header REMOTE-HOST $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    proxy_pass https://localhost:8080/;  # 后端接口</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  error_page   500 502 503 504  /50x.html;</span><br><span class="line">  location = /50x.html &#123;</span><br><span class="line">    root   html;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在 <strong>nginx</strong> 目录下执行 <code>nginx -s reload</code> 重启服务</li>
+</ol>
+<p>完成！</p>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>linux</tag>
+        <tag>nginx</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue 项目编译或打包时自动生成版本号</title>
+    <url>/2021/12/17/vue%20%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%88%96%E6%89%93%E5%8C%85%E6%97%B6%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%89%88%E6%9C%AC%E5%8F%B7/</url>
+    <content><![CDATA[<p>在项目的登录页中放置了版本号信息 <strong>V 2.2 1639710093</strong> ，每次发布都需要手动更换最后面的时间戳，这样的操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。</p>
+<span id="more"></span>
+
+<h2 id="webpack-DefinePlugin"><a href="#webpack-DefinePlugin" class="headerlink" title="webpack.DefinePlugin"></a>webpack.DefinePlugin</h2><p><strong>webpack.DefinePlugin</strong> 插件可以帮助我们配置项目中常用的全局变量，从而提升工作效率。具体配置信息如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">chainWebpack</span>(<span class="params">config</span>)</span> &#123;</span><br><span class="line">  <span class="comment">// 配置全局变量</span></span><br><span class="line">  <span class="comment">// 在 src 目录下的文件中的 js 文件或者 vue 文件中的 script 部分可以访问到定义的全局变量</span></span><br><span class="line">  <span class="comment">// second_timestamp 秒级时间戳 当做版本号后缀</span></span><br><span class="line">  config</span><br><span class="line">    .plugin(<span class="string">&#x27;define&#x27;</span>)</span><br><span class="line">    .tap(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line">      args[<span class="number">0</span>][<span class="string">&#x27;SECOND_TIMESTAMP&#x27;</span>] = <span class="built_in">JSON</span>.stringify(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime().toString().slice(<span class="number">0</span>, <span class="number">10</span>))</span><br><span class="line">      args[<span class="number">0</span>][<span class="string">&#x27;GLOBAL_VAR&#x27;</span>] = <span class="built_in">JSON</span>.stringify(<span class="string">&#x27;GLOBAL_VAR&#x27;</span>)</span><br><span class="line">      <span class="keyword">return</span> args</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用方法：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vue 文件中使用</span></span><br><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    SECOND_TIMESTAMP,</span><br><span class="line">    GLOBAL_VAR</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>版本号</tag>
+        <tag>webpack</tag>
+        <tag>DefinePlugin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端开发规范</title>
+    <url>/2021/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122164127.jpeg" alt="前端代码开发规范"></p>
+<p>为实现代码一致性和最佳实践，通过代码风格的一致性，降低维护代码的成本以及改善多人协作的效率。同时遵守最佳实践，确保页面性能得到最佳优化和高效的代码。</p>
+<span id="more"></span>
+
+<h2 id="项目版本号"><a href="#项目版本号" class="headerlink" title="项目版本号"></a>项目版本号</h2><p>格式：<code>V1.1 1631239690</code></p>
+<p>大写字母V + 大版本号 + 小版本号 + 时间戳</p>
+<ul>
+<li>大版本号：项目整体有重大变动时+1</li>
+<li>小版本号：与甲方确认封板之后+1</li>
+<li>时间戳：10位秒级时间戳，每发布一次代码更新至当前时间戳</li>
+</ul>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><h3 id="命名原则"><a href="#命名原则" class="headerlink" title="命名原则"></a>命名原则</h3><ul>
+<li>英文命名</li>
+<li>命名语义化</li>
+<li>慎用缩写</li>
+</ul>
+<h3 id="项目命名"><a href="#项目命名" class="headerlink" title="项目命名"></a>项目命名</h3><p>全部采用小写方式，以横线分隔。例：<code>my-project-name</code></p>
+<h3 id="目录命名"><a href="#目录命名" class="headerlink" title="目录命名"></a>目录命名</h3><ul>
+<li>参照项目命名规则</li>
+<li>有复数结构时，要采用复数命名法<br>例：<code>scripts</code>， <code>styles</code>， <code>images</code>， <code>data-models</code></li>
+<li>vue的项目中，components下的组件目录名，使用大驼峰命名，例：<code>LeftBar</code></li>
+</ul>
+<h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><p>参照项目命名规则</p>
+<h2 id="HTML-规范"><a href="#HTML-规范" class="headerlink" title="HTML 规范"></a>HTML 规范</h2><ul>
+<li>缩进使用tab（2个空格）</li>
+<li>属性名全小写，用中划线（-）做分隔符，例：<code>class=&quot;hello-world&quot;</code></li>
+</ul>
+<h2 id="CSS-规范"><a href="#CSS-规范" class="headerlink" title="CSS 规范"></a>CSS 规范</h2><ul>
+<li>使用tab缩进（2个空格）</li>
+<li>每个声明结束都要加分号</li>
+</ul>
+<h2 id="JavaScript-规范"><a href="#JavaScript-规范" class="headerlink" title="JavaScript 规范"></a>JavaScript 规范</h2><ul>
+<li>使用tab缩进（2个空格）</li>
+<li>变量命名<ul>
+<li>标准变量采用驼峰式命名，例：<code>maxValue</code></li>
+<li>常量全大写，用下划线连接，例：<code>const BASE_URL = &quot;https://xxx.com/api/&quot;</code></li>
+</ul>
+</li>
+<li>变量声明优先使用 <code>const</code>，其次 <code>let</code>，避免使用 <code>var</code></li>
+<li>代码行末尾统一要加分号</li>
+<li>超过一层条件慎用三元表达式</li>
+<li>空行<ul>
+<li>变量声明后（当变量声明在代码块的最后一行时，则无需空行）</li>
+<li>注释前（当注释在代码块的第一行时，则无需空行）</li>
+<li>文件最后保留一个空行</li>
+</ul>
+</li>
+<li>注释<ul>
+<li>注释单独一行的情况下，注释的<code>//</code>后面要跟一个空格</li>
+<li>注释如果和代码同一行，代码分号结束后，要跟一个空格，注释的<code>//</code>后也要跟一个空格</li>
+<li>复杂的函数，所有类，都必须进行函数注释，函数注释使用业界统一的规范<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取任务的名称</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param </span>id &#123;Number&#125; 传入需要获取名称的人物id</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return <span class="type">&#123;String&#125;</span> </span>返回的姓名</span></span><br><span class="line"><span class="comment">* <span class="doctag">@author </span>shi 2015/07/21 可以不写</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version </span>1.1.0 可以不写</span></span><br><span class="line"><span class="comment">* <span class="doctag">@example </span>示例代码，可以不写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTaskName</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="Vue-规范"><a href="#Vue-规范" class="headerlink" title="Vue 规范"></a>Vue 规范</h2><p><a href="https://cn.vuejs.org/v2/style-guide/">Vue 风格指南</a></p>
+<h2 id="代码提交规范"><a href="#代码提交规范" class="headerlink" title="代码提交规范"></a>代码提交规范</h2><ul>
+<li>提交代码前先更新</li>
+<li>提交代码务必说明清楚修改的内容</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发规范</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+        <tag>开发规范</tag>
+        <tag>html</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack 配置与使用</title>
+    <url>/2021/12/13/webpack%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211213144846.png" alt="webpack"></p>
+<p>本质上，<strong>webpack</strong> 是一个用于现代 JavaScript 应用程序的 <em>静态模块打包工具</em>。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 <a href="https://webpack.docschina.org/concepts/dependency-graph/">依赖图(dependency graph)</a>，然后将你项目中所需的每一个模块组合成一个或多个 <em>bundles</em>，它们均为静态资源，用于展示你的内容。</p>
+<span id="more"></span>
+
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>模块化管理。在写项目时我们可以分成许多模块以降低模块的复杂性，同时也利于我们的维护。通过  <strong>webpack</strong> 打包我们又可以将这些模块整合起来。</li>
+<li>兼容处理。部分 <strong>javascript</strong> 比较新的语法可能在个别浏览器上无法得到支持，此外还有便于开发用的 <strong>less</strong> 等升级语言，所以我们要靠 <strong>webpack</strong> 将代码编译为浏览器所支持的语言。</li>
+<li>插件。 <strong>webpack</strong> 中的 <strong>plugins</strong> 支持我们使用一些插件对项目进行优化，如按需加载，代码压缩等。</li>
+</ul>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在项目根目录新建 <strong>webpack.config.js</strong> 文件用来存放 <strong>webpack</strong> 配置信息。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	<span class="comment">// 配置信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h3><p>编译模式。分为 <strong><code>development</code></strong> 和 **<code>production</code>**：</p>
+<ul>
+<li><code>development  开发模式：速度快、体积大</code></li>
+<li><code>production  生产模式：数度慢、体积小</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="attr">mode</span>: <span class="string">&#x27;development&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h3><p>指定要处理的文件</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径工具</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="comment">// path.join()  拼接路径</span></span><br><span class="line">  <span class="comment">// __dirname  当前目录</span></span><br><span class="line">  <span class="attr">entry</span>: path.join(__dirname, <span class="string">&#x27;./src/index.js&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>文件输出位置</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 文件路径工具</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="comment">// 存放目录</span></span><br><span class="line">    <span class="attr">path</span>: path.join(__dirname, <span class="string">&#x27;dist&#x27;</span>),</span><br><span class="line">    <span class="comment">// 生成的文件存放路径</span></span><br><span class="line">    <span class="attr">filename</span>: <span class="string">&#x27;js/bundle.js&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>插件使用。将配置好的插件实例放在 <strong>plugins</strong> 数组中。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// html 插件，该插件会自动在 index.html 文件中引入生成的文件</span></span><br><span class="line"><span class="keyword">const</span> HtmlPlugin = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>)</span><br><span class="line"><span class="comment">// 删除打包文件的插件</span></span><br><span class="line"><span class="keyword">const</span> &#123; CleanWebpackPlugin &#125; = <span class="built_in">require</span>(<span class="string">&#x27;clean-webpack-plugin&#x27;</span>)  </span><br><span class="line"><span class="comment">// 创建 html 插件实例  </span></span><br><span class="line"><span class="keyword">const</span> htmlPlugin = <span class="keyword">new</span> HtmlPlugin(&#123; </span><br><span class="line">  <span class="attr">template</span>: <span class="string">&#x27;./src/index.html&#x27;</span>, <span class="comment">// 指定原文件的存放路径 </span></span><br><span class="line">  <span class="attr">filename</span>: <span class="string">&#x27;./index.html&#x27;</span>, <span class="comment">// 指定生成文件的存放路径  </span></span><br><span class="line">&#125;) </span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="attr">plugins</span>: [htmlPlugin, cleanWebpackPlugin],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a>html-webpack-plugin</h4><p>打包时创建入口文件，一般为 <strong>index.html</strong>。此文件为项目的入口文件，通过访问此文件来浏览项目。</p>
+<h4 id="clean-webpack-plugin"><a href="#clean-webpack-plugin" class="headerlink" title="clean-webpack-plugin"></a>clean-webpack-plugin</h4><p>项目每次打包都会生成一套文件，而每次的文件名会有差异，这就需要我们每次生成前删除之前的文件。这个插件可以帮助我们做这部分的工作。</p>
+<h3 id="devServer"><a href="#devServer" class="headerlink" title="devServer"></a>devServer</h3><p>开发服务配置。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="comment">// 开发服务配置</span></span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="comment">// 自动打开浏览器</span></span><br><span class="line">    <span class="attr">open</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 端口号</span></span><br><span class="line">    <span class="attr">port</span>: <span class="number">80</span>,</span><br><span class="line">    <span class="comment">// 主机地址</span></span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="comment">// 默认：localhost</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><p>加载器。<strong>webpack</strong> 默认只支持 <strong>javascript</strong> 编译，若想要编译 <strong>css</strong>、图片等的编译需要加入对应的加载器。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="comment">// 第三方模块配置</span></span><br><span class="line">  <span class="attr">module</span>: &#123;</span><br><span class="line">    <span class="comment">// 文件处理规则</span></span><br><span class="line">    <span class="comment">// 倒序执行 use 数组里的加载器</span></span><br><span class="line">    <span class="attr">rules</span>: [</span><br><span class="line">      <span class="comment">// css</span></span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, use: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>] &#125;,</span><br><span class="line">      <span class="comment">// less</span></span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.less$/</span>, use: [<span class="string">&#x27;style-loader&#x27;</span>, <span class="string">&#x27;css-loader&#x27;</span>, <span class="string">&#x27;less-loader&#x27;</span>] &#125;,</span><br><span class="line">      <span class="comment">// 图片</span></span><br><span class="line">      <span class="comment">// limit  图片大小限制  单位：byte(字节)  &lt;= limit 时会将图片转换为 base64 格式，否者为原来格式</span></span><br><span class="line">      <span class="comment">// outputPath  指定图片文件输出路径</span></span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.jpg|png|gif$/</span>, use: <span class="string">&#x27;url-loader?limit=50000&amp;outputPath=images&#x27;</span> &#125;,</span><br><span class="line">      <span class="comment">// 使用 babel 处理 js 高级语法</span></span><br><span class="line">      <span class="comment">// 第三方包即（node_modules）不需要处理</span></span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, use: <span class="string">&#x27;babel-loader&#x27;</span>, <span class="attr">exclude</span>: <span class="string">&#x27;/node_modules/&#x27;</span> &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h3><p>调试工具选项，可以帮助我们定为代码报错位置。</p>
+<blockquote>
+<p>SourceMap 源代码和生成代码的对应关系</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="comment">// 开启后可以定位到发生错误的源代码具体行数</span></span><br><span class="line">  <span class="comment">// nosources-source-map  显示行号但不显示源代码</span></span><br><span class="line">  <span class="comment">// eval-source-map  显示行号并且显示源代码</span></span><br><span class="line">  <span class="attr">devtool</span>: <span class="string">&#x27;eval-source-map&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><p>别名。解决层级复杂的问题，例如：**”../../../../images/logo.jpg”** 。使用别名指向 <strong>src</strong> 目录后即可用 <strong>“@/images/logo.jpg”</strong> 访问。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">  <span class="attr">resolve</span>: &#123;</span><br><span class="line">    <span class="comment">// 别名，项目中使用 @ 将被替换为根目录的 src</span></span><br><span class="line">    <span class="attr">alias</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;@&#x27;</span>: path.join(__dirname, <span class="string">&#x27;./src/&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>工具使用</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站主题切换功能实现</title>
+    <url>/2022/04/24/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E5%88%87%E6%8D%A2%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<p>网站的主题切换可以分为颜色的切换和图片的切换，本文使用 <code>vue3 + vite</code> 进行实现。</p>
+<span id="more"></span>
+
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>主题的保存主要分为三块儿。</p>
+<p>首先使用 <code>localStorage</code> 对用户选择的主题进行缓存，方便用户再次进入网站读取上次保存的主题。</p>
+<p><code>body</code> 节点中设置 <code>data-theme</code> 自定义属性保存当前主题，为颜色的切换提供保障。</p>
+<p>状态管理中定义当前主题，方便每个组件动态加载当前主题的图片。</p>
+<h2 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h2><p>状态管理中定义保存主题的变量，以及设置它的方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineStore &#125; <span class="keyword">from</span> <span class="string">&#x27;pinia&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> useAppStore = defineStore(&#123;</span><br><span class="line">  <span class="attr">id</span>: <span class="string">&#x27;app&#x27;</span>,</span><br><span class="line">  <span class="attr">state</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">theme</span>: <span class="string">&quot;white&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">actions</span>: &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置主题</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param <span class="type">&#123;String&#125;</span> </span>theme </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="title">setTheme</span>(<span class="params">theme</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.theme = theme</span><br><span class="line">      <span class="built_in">window</span>.localStorage.setItem(<span class="string">&quot;theme&quot;</span>, theme)</span><br><span class="line">      <span class="built_in">document</span>.querySelector(<span class="string">&quot;body&quot;</span>).setAttribute(<span class="string">&quot;data-theme&quot;</span>, theme)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>网站初始化时读取缓存，若保存了主题则设置网站主题为保存的主题，否则设置默认主题。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">onMounted(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> theme = <span class="built_in">localStorage</span>.getItem(<span class="string">&quot;theme&quot;</span>)</span><br><span class="line">  <span class="keyword">if</span>(theme)&#123;</span><br><span class="line">    appStore.setTheme(theme)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    appStore.setTheme(<span class="string">&quot;white&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>用户进行主题切换。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useAppStore &#125; <span class="keyword">from</span> <span class="string">&#x27;@/stores/app&#x27;</span></span><br><span class="line"><span class="keyword">const</span> appStore = useAppStore()</span><br><span class="line">...</span><br><span class="line">appStore.setTheme(<span class="string">&#x27;white&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="颜色切换"><a href="#颜色切换" class="headerlink" title="颜色切换"></a>颜色切换</h2><p>主题保存至 <code>body</code> 节点的 <code>data-theme</code> 属性中，在 <code>styles/theme.css</code> 文件中定义不同主题的颜色变量。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 白色主题变量 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=white]</span>&#123;</span><br><span class="line">  --bg: <span class="number">#fff</span>;</span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#333</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 黑色主题变量 */</span></span><br><span class="line"><span class="selector-attr">[data-theme=black]</span>&#123;</span><br><span class="line">  --bg: <span class="number">#333</span>;</span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#fff</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在组件中使用变量。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="attribute">background-color</span>: <span class="built_in">var</span>(--bg);</span><br><span class="line">...</span><br><span class="line"><span class="attribute">color</span>: <span class="built_in">var</span>(--color);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="图片切换"><a href="#图片切换" class="headerlink" title="图片切换"></a>图片切换</h2><p>不同主题的图片存放在不同的主题文件夹下，相对路径保持一致。</p>
+<p>动态引入图片。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useAppStore &#125; <span class="keyword">from</span> <span class="string">&#x27;@/stores/app&#x27;</span></span><br><span class="line"><span class="keyword">const</span> appStore = useAppStore()</span><br><span class="line">...</span><br><span class="line"><span class="keyword">const</span> logo = computed(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`/theme/<span class="subst">$&#123;appStore.theme&#125;</span>/logo.png`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a href="https://gitee.com/Rexiamu/switch-theme-demo">https://gitee.com/Rexiamu/switch-theme-demo</a></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>主题切换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>请求参数类型之 x-www-form-urlencoded</title>
+    <url>/2022/03/18/%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E4%B9%8B%20x-www-form-urlencoded/</url>
+    <content><![CDATA[<p>对于后端接口规定使用 <code>x-www-form-urlencoded</code> 形式接收请求参数时，如果传递一个 json 数据过去，则是无法解析的。对于设置了 <code>x-www-form-urlencoded</code> 请求参数类型的接口，前端需要将 json 数据转化为键值对字符串的形式（eg:”name:zhangsan&amp;age:18”）,并且设置请求头参数 <code>content-type</code> 为 <code>application/x-www-form-urlencoded</code>。</p>
+<span id="more"></span>
+
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入 qs 库，用来将 json 数据转化为键值对字符串</span></span><br><span class="line"><span class="comment">// 如果安装了 axios 则可以直接引用</span></span><br><span class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">&#x27;qs&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> request(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/api/getData&#x27;</span>,</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">headers</span>: &#123; <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;application/x-www-form-urlencoded&#x27;</span> &#125;,</span><br><span class="line">    <span class="attr">data</span>: qs.stringify(data) <span class="comment">// 使用 qs 库的 stringify 方法，将 json 数据转化为键值对字符串</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>使用较多的请求参数类型有 <code>application/json</code> 和 <code>application/x-www-form-urlencoded</code></li>
+<li><code>application/json</code> 接收 json 数据</li>
+<li><code>application/x-www-form-urlencoded</code> 接收键值对字符串（eg:”name:zhangsan&amp;age:18”）</li>
+<li>后端接口请求参数只有一个对象时，使用 <code>@RequestBody</code> 进行注解，此时请求参数类型为 <code>application/json</code></li>
+<li>后端接口请求参数不是只有一个对象时，不使用 <code>@RequestBody</code> 进行注解，此时请求参数类型为 <code>application/x-www-form-urlencoded</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>问题记录</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+        <tag>axios</tag>
+        <tag>qs</tag>
+        <tag>x-www-form-urlencoded</tag>
+      </tags>
+  </entry>
+</search>
