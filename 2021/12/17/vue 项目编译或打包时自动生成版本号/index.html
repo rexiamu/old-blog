@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
 <meta name="generator" content="Hexo 5.4.0">
 
-<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
@@ -19,20 +19,19 @@
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://unpkg.com/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"rexiamu.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.8.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="在项目的登录页中放置了版本号信息 V 2.2 1639710093 ，每次发布都需要手动更换最后面的时间戳，这样的操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"rexiamu.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.8.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="在项目的登录页中放置了版本号信息 V 2.2 1639710093 ，每次发布都需要手动更换最后面的时间戳，这样操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue 项目编译或打包时自动生成版本号">
 <meta property="og:url" content="https://rexiamu.github.io/2021/12/17/vue%20%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%88%96%E6%89%93%E5%8C%85%E6%97%B6%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%89%88%E6%9C%AC%E5%8F%B7/index.html">
 <meta property="og:site_name" content="Rexiamu">
-<meta property="og:description" content="在项目的登录页中放置了版本号信息 V 2.2 1639710093 ，每次发布都需要手动更换最后面的时间戳，这样的操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。">
+<meta property="og:description" content="在项目的登录页中放置了版本号信息 V 2.2 1639710093 ，每次发布都需要手动更换最后面的时间戳，这样操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-17T03:07:44.000Z">
-<meta property="article:modified_time" content="2022-05-31T02:14:02.189Z">
+<meta property="article:published_time" content="2021-12-17T11:07:44.000Z">
+<meta property="article:modified_time" content="2022-05-31T03:07:07.619Z">
 <meta property="article:author" content="Rexiamu">
 <meta property="article:tag" content="vue">
 <meta property="article:tag" content="版本号">
@@ -61,7 +60,7 @@
   </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
   <main class="main">
@@ -215,7 +214,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -246,7 +244,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue 项目编译或打包时自动生成版本号<a href="https://github.com/rexiamu/rexiamu.github.io/edit/my-blog/source/_posts/vue%20%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%88%96%E6%89%93%E5%8C%85%E6%97%B6%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%89%88%E6%9C%AC%E5%8F%B7.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          vue 项目编译或打包时自动生成版本号
         </h1>
 
         <div class="post-meta-container">
@@ -257,14 +255,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-12-17 11:07:44" itemprop="dateCreated datePublished" datetime="2021-12-17T11:07:44+08:00">2021-12-17</time>
+      <time title="创建时间：2021-12-17 11:07:44" itemprop="dateCreated datePublished" datetime="2021-12-17T11:07:44+00:00">2021-12-17</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-05-31 10:14:02" itemprop="dateModified" datetime="2022-05-31T10:14:02+08:00">2022-05-31</time>
+        <time title="修改时间：2022-05-31 03:07:07" itemprop="dateModified" datetime="2022-05-31T03:07:07+00:00">2022-05-31</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,7 +284,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>在项目的登录页中放置了版本号信息 <strong>V 2.2 1639710093</strong> ，每次发布都需要手动更换最后面的时间戳，这样的操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。</p>
+        <p>在项目的登录页中放置了版本号信息 <strong>V 2.2 1639710093</strong> ，每次发布都需要手动更换最后面的时间戳，这样操作很繁琐，于是乎找到了一种让项目自动编译时自动生成时间戳的方法。</p>
 <span id="more"></span>
 
 <h2 id="webpack-DefinePlugin"><a href="#webpack-DefinePlugin" class="headerlink" title="webpack.DefinePlugin"></a>webpack.DefinePlugin</h2><p><strong>webpack.DefinePlugin</strong> 插件可以帮助我们配置项目中常用的全局变量，从而提升工作效率。具体配置信息如下：</p>
@@ -295,6 +293,9 @@
 <p>使用方法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue 文件中使用</span></span><br><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    SECOND_TIMESTAMP,</span><br><span class="line">    GLOBAL_VAR</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+        <div>
+          <a href="https://github.com/rexiamu/rexiamu.github.io/edit/my-blog/source/_posts/vue 项目编译或打包时自动生成版本号.md" target="_blank">Edit it on Github</a>
+        </div>
     </div>
 
     
@@ -355,26 +356,25 @@
   </footer>
 
   
-  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
-  <script src="/js/third-party/pace.js"></script>
 
   
 
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"rexiamu","repo":"blog-comments","client_id":"a038a5c48b13a91149e0","client_secret":"70eaa9ea87e2c73d592ce1c92cde8082da1e607c","admin_user":"rexiamu","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6c0afbca6e25bf91cd394bf5fb3096db"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"rexiamu","repo":"blog-comments","client_id":"a038a5c48b13a91149e0","client_secret":"70eaa9ea87e2c73d592ce1c92cde8082da1e607c","admin_user":"rexiamu","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6c0afbca6e25bf91cd394bf5fb3096db"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
