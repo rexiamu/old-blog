@@ -9,7 +9,7 @@ categories:
   - [前端]
 ---
 
-![javascript 原型链示意图](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220330130430.png)
+![javascript 原型链示意图](https://s2.loli.net/2022/05/31/69KCWqup3kliXdY.png)
 
 在 java 语言中使用类的继承进行面向对象编程，而在 javaScript 语言中则是使用原型及原型链的方式进行面向对象编程。
 

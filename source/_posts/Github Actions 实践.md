@@ -9,7 +9,7 @@ categories:
   - 工具使用
 ---
 
-![github](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220218143434.png)
+![github](https://s2.loli.net/2022/05/31/B4JcMuPfEwxlVtN.png)
 
 [GitHub Actions](https://docs.github.com/cn/actions) 是一个持续集成和持续交付(CI/CD)的平台，它允许你自动化构建、测试和部署管道。您可以创建工作流来构建和测试存储库中的每个pull请求，或者将合并的pull请求部署到生产中。
 

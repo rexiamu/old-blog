@@ -11,7 +11,7 @@ categories:
   - [前端]
 ---
 
-![nginx](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402160643.jpg)
+![nginx](https://s2.loli.net/2022/05/31/BEuZd82ec3MVKy7.webp)
 
 **vue** 通过 **nginx** 部署。 
 

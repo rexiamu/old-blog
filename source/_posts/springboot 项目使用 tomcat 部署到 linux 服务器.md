@@ -12,7 +12,7 @@ categories:
   - [后端]
 ---
 
-![tomcat](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220402134323.jpg)
+![tomcat](https://s2.loli.net/2022/05/31/dYrjIsCTQBR3hFw.webp)
 
 **springboot** 项目打包 **war** 包，通过 **tomcat** 部署。 
 

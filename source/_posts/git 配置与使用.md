@@ -8,7 +8,7 @@ categories:
   - 工具使用
 ---
 
-![git](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160438.png)
+![git](https://s2.loli.net/2022/05/31/VH8tAsJ9pziDgWG.png)
 
 [Git](https://git-scm.com/book/zh/v2) 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。
 
@@ -35,7 +35,7 @@ git config --global user.email rexiamu@gmail.com
 
 ## 工作流程
 
-![git工作流程](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20211122160702.png)
+![git工作流程](https://s2.loli.net/2022/05/31/QiFVCX8EDLH2fek.png)
 
 区域说明：
 

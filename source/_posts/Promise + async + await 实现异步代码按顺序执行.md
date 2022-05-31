@@ -10,7 +10,7 @@ categories:
   - 前端
 ---
 
-![期望的执行流程](https://gitee.com/Rexiamu/image-hosting/raw/master/img/20220113135506.png)
+![期望的执行流程](https://s2.loli.net/2022/05/31/DpsoZ7NI3fe89Ul.png)
 
 在实际的工作中，我们常常会碰到这样的场景：调用接口 A  返回数据 a ，使用数据 a 作为请求参数调用接口 B 返回数据 b ，再使用数据 b 作为请求参数调用接口 C ... 
 
