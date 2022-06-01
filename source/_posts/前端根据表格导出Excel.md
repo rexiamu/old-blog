@@ -37,7 +37,7 @@ export function tableToExcel(table, fileName) {
 
 ## 函数使用
 
-···js
+```js
 // 导入 tableToExcel 函数
 import { tableToExcel } from "@/utils/index"
 
