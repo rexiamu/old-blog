@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -175,7 +175,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -225,6 +225,82 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://rexiamu.github.io/2022/06/01/%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Rexiamu">
+      <meta itemprop="description" content="永远年轻永远热泪盈眶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rexiamu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/01/%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%B8%B2%E6%9F%93%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">虚拟列表-大数据渲染的解决方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-06-01 21:34:56 / 修改时间：14:03:04" itemprop="dateCreated datePublished" datetime="2022-06-01T21:34:56+00:00">2022-06-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在一些不分页的数据列表中，随着数据量的提升，渲染将会变得十分吃力。利用虚拟列表技术，可以只渲染当前可视区域的数据，如此便可大大降低浏览器的压力，提升渲染速度。</p>
+<h2 id="方案解析"><a href="#方案解析" class="headerlink" title="方案解析"></a>方案解析</h2><p>要想实现虚拟列表功能，首先需要一个固定可视区域去展示数据（数据展示区域），并且还要有一个区域去模拟所有数据所占的空间（滚动区域）。<br>当滚轮滚动时，获取到此时的 scrollTop 值，然后根据这个值去计算应当显示的数据是哪几条，再将这些数据渲染至数据展示区域。<br>如此以来，网页只会显示用户应该看到的数据。</p>
+<h2 id="方案实现"><a href="#方案实现" class="headerlink" title="方案实现"></a>方案实现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 样式 --&gt;</span></span><br><span class="line">.table &#123;</span><br><span class="line">  width: 400px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  border: 1px solid #eee;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thead &#123;</span><br><span class="line">  height: 50px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.thead-item &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">  border: 3px solid #eee;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tbody &#123;</span><br><span class="line">  height: 500px; // 表格的高度</span><br><span class="line">  overflow-y: auto; // 设置 Y 轴超出显示滚动条</span><br><span class="line">  position: relative; // 相对定位</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.trow &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 50px; // 一行数据的高度</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.trow-item &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: center;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 滚动区域，用于撑开表格，模拟实际所有数据的空间 --&gt;</span></span><br><span class="line">.scroll-area &#123;</span><br><span class="line">  position: absolute; // 绝对定位</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  z-index: -1;  // 设置 Z 轴 为 -1，为了不遮挡数据渲染</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 数据展示区域 --&gt;</span></span><br><span class="line">.list &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 500px;  // 与表格同高</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- dom --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;table&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;thead&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;thead-item&quot;</span>&gt;</span>id<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;thead-item&quot;</span>&gt;</span>name<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;thead-item&quot;</span>&gt;</span>count<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;tbody&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 滚动区域，用于撑开表格，模拟实际所有数据的空间 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;scroll-area&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 数据展示区域 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>nick<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>99<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line">// 列表可见区高度、每行数据高度、所有数据、可见数据</span><br><span class="line">const visibleHeight = 500, itemHeight = 50, allData = [], visibleData = [];</span><br><span class="line"></span><br><span class="line">init()</span><br><span class="line"></span><br><span class="line">// 初始化</span><br><span class="line">function init() &#123;</span><br><span class="line">  // 生成 10 万条数据</span><br><span class="line">  for (let i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">    allData.push(&#123;</span><br><span class="line">      id: i + 1,</span><br><span class="line">      name: &#x27;nick&#x27; + (Math.random() * 10).toFixed(0),</span><br><span class="line">      count: (Math.random() * 100).toFixed(0)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 根据所有数据设置滚动区高度</span><br><span class="line">  document.querySelector(&#x27;.scroll-area&#x27;).style.height = allData.length * itemHeight + &#x27;px&#x27;</span><br><span class="line"></span><br><span class="line">  // 监听滚动事件</span><br><span class="line">  document.querySelector(&#x27;.tbody&#x27;).addEventListener(&#x27;scroll&#x27;, function (e) &#123;</span><br><span class="line">    updateDomData(e.target.scrollTop)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  // 首次打开渲染数据</span><br><span class="line">  updateDomData()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 更新数据</span><br><span class="line">function updateDomData(scrollTop = 0) &#123;</span><br><span class="line">  let visibleCount = Math.ceil(visibleHeight / itemHeight); // 可视区域容纳数据的数量</span><br><span class="line">  let start = Math.floor(scrollTop / itemHeight);  // 当前显示数据列表的第一条索引</span><br><span class="line">  let end = start + visibleCount; // 当前显示数据列表的最后一条索引</span><br><span class="line">  visibleData.length = 0; // 清空数据</span><br><span class="line">  visibleData.push(...allData.slice(start, end)); // 从所有数据中筛选当前的数据项</span><br><span class="line"></span><br><span class="line">  // 根据 visibleData 生成对应的 dom 并渲染</span><br><span class="line">  let htmlStr = &#x27;&#x27;</span><br><span class="line">  visibleData.forEach(item =&gt; &#123;</span><br><span class="line">    htmlStr += `</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>$&#123;item.id&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>$&#123;item.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trow-item&quot;</span>&gt;</span>$&#123;item.count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    `</span><br><span class="line">  &#125;)</span><br><span class="line">  document.querySelector(&#x27;.list&#x27;).innerHTML = htmlStr</span><br><span class="line"></span><br><span class="line">  // 将数据列表移动到可见区域</span><br><span class="line">  document.querySelector(&#x27;.list&#x27;).style.top = start * itemHeight + &#x27;px&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://rexiamu.github.io/2022/06/01/%E5%89%8D%E7%AB%AF%E6%A0%B9%E6%8D%AE%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BAExcel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -250,7 +326,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-06-01 21:13:11 / 修改时间：13:32:11" itemprop="dateCreated datePublished" datetime="2022-06-01T21:13:11+00:00">2022-06-01</time>
+      <time title="创建时间：2022-06-01 21:13:11 / 修改时间：14:03:04" itemprop="dateCreated datePublished" datetime="2022-06-01T21:13:11+00:00">2022-06-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -337,7 +413,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -424,7 +500,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -516,7 +592,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -608,7 +684,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -696,7 +772,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -787,7 +863,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -875,7 +951,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -963,7 +1039,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
+        <time title="修改时间：2022-06-01 14:03:04" itemprop="dateModified" datetime="2022-06-01T14:03:04+00:00">2022-06-01</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -989,94 +1065,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/12/17/vue%20%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%88%96%E6%89%93%E5%8C%85%E6%97%B6%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%89%88%E6%9C%AC%E5%8F%B7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://rexiamu.github.io/2021/12/13/webpack%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Rexiamu">
-      <meta itemprop="description" content="永远年轻永远热泪盈眶">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rexiamu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/12/13/webpack%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">webpack 配置与使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-12-13 16:04:15" itemprop="dateCreated datePublished" datetime="2021-12-13T16:04:15+00:00">2021-12-13</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-06-01 13:32:11" itemprop="dateModified" datetime="2022-06-01T13:32:11+00:00">2022-06-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">工具使用</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="https://s2.loli.net/2022/05/31/1QvbicSCT5ONxRK.png" alt="webpack"></p>
-<p>本质上，<strong>webpack</strong> 是一个用于现代 JavaScript 应用程序的 <em>静态模块打包工具</em>。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 <a target="_blank" rel="noopener" href="https://webpack.docschina.org/concepts/dependency-graph/">依赖图(dependency graph)</a>，然后将你项目中所需的每一个模块组合成一个或多个 <em>bundles</em>，它们均为静态资源，用于展示你的内容。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/13/webpack%20%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
