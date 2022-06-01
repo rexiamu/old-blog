@@ -402,6 +402,28 @@
       </tags>
   </entry>
   <entry>
+    <title>前端根据表格导出Excel</title>
+    <url>/2022/06/01/%E5%89%8D%E7%AB%AF%E6%A0%B9%E6%8D%AE%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%87%BAExcel/</url>
+    <content><![CDATA[<p>前端根据表格导出Excel功能的简单封装，可设置样式。</p>
+<span id="more"></span>
+
+<h2 id="函数封装"><a href="#函数封装" class="headerlink" title="函数封装"></a>函数封装</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 导出table至Excel并下载</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;HTMLElement&#125;</span> </span>table 表格dom</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;String&#125;</span> </span>fileName 导出文件名</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">tableToExcel</span>(<span class="params">table, fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> excelContent = table.innerHTML;</span><br><span class="line">  <span class="keyword">var</span> excelFile = <span class="string">&quot;&lt;html xmlns:o=&#x27;urn:schemas-microsoft-com:office:office&#x27; xmlns:x=&#x27;urn:schemas-microsoft-com:office:excel&#x27; xmlns=&#x27;http://www.w3.org/TR/REC-html40&#x27;&gt;&quot;</span>;</span><br><span class="line">  excelFile += <span class="string">&quot;&lt;head&gt;&lt;!--[if gte mso 9]&gt;&lt;xml&gt;&lt;x:ExcelWorkbook&gt;&lt;x:ExcelWorksheets&gt;&lt;x:ExcelWorksheet&gt;&lt;x:Name&gt;&#123;worksheet&#125;&lt;/x:Name&gt;&lt;x:WorksheetOptions&gt;&lt;x:DisplayGridlines/&gt;&lt;/x:WorksheetOptions&gt;&lt;/x:ExcelWorksheet&gt;&lt;/x:ExcelWorksheets&gt;&lt;/x:ExcelWorkbook&gt;&lt;/xml&gt;&lt;![endif]--&gt;&lt;/head&gt;&quot;</span>;</span><br><span class="line">  excelFile += excelContent;</span><br><span class="line">  excelFile += <span class="string">&quot;&lt;/table&gt;&quot;</span>;</span><br><span class="line">  excelFile += <span class="string">&quot;&lt;/html&gt;&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> link = <span class="string">&quot;data:application/vnd.ms-excel;base64,&quot;</span> + <span class="built_in">window</span>.btoa(<span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>(excelFile)));</span><br><span class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">  a.download = fileName + <span class="string">&quot;.xlsx&quot;</span>;</span><br><span class="line">  a.href = link;</span><br><span class="line">  a.click();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h2><p>···js<br>// 导入 tableToExcel 函数<br>import { tableToExcel } from “@/utils/index”</p>
+<p>…</p>
+<p>// 使用<br>const table = document.querySelector(‘.export-table’)<br>table.style.background = “#112549” // 修改表格样式，设置行内样式导出时才生效<br>tableToExcel(table, ‘设备历史数据’)</p>
+<pre><code>
+</code></pre>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>表格</tag>
+        <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网站主题切换功能实现</title>
     <url>/2022/04/24/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E5%88%87%E6%8D%A2%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>网站的主题切换可以分为颜色的切换和图片的切换，本文使用 <code>vue3 + vite</code> 进行实现。</p>
