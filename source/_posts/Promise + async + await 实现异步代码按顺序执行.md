@@ -39,7 +39,7 @@ setTimeout(() => {
 ```
 使用后：
 ```javascript
-function printA() {
+function request1() {
   return new Promise((re, rj) => {
     setTimeout(() => {
       re("A");
@@ -47,7 +47,7 @@ function printA() {
   });
 }
 
-function printB() {
+function request2() {
   return new Promise((re, rj) => {
     setTimeout(() => {
       re("B");
@@ -55,7 +55,7 @@ function printB() {
   });
 }
 
-function printC() {
+function request3() {
   return new Promise((re, rj) => {
     setTimeout(() => {
       re("C");
@@ -63,13 +63,13 @@ function printC() {
   });
 }
 
-async function print() {
-  await printA().then(console.log);
-  await printB().then(console.log);
-  await printC().then(console.log);
+async function getData() {
+  await request1().then(console.log);
+  await request2().then(console.log);
+  await request3().then(console.log);
 }
 
-print();
+getData();
 
 // 期望输出 A => B => C
 // 实际输出 A => B => C
