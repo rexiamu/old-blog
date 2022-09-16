@@ -135,6 +135,64 @@
       </tags>
   </entry>
   <entry>
+    <title>linux 服务器常用命令</title>
+    <url>/2022/09/16/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><img src="https://s2.loli.net/2022/09/16/GL3HtisjUQEgDyo.png" alt="linux"></p>
+<span id="more"></span>
+
+<h2 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h2><ul>
+<li><code>netstat -ntlp</code> 查看端口占用情况</li>
+<li><code>netstat -ntulp | grep [port]</code> 查看指定端口占用情况</li>
+<li><code>ps aux | grep [keyword]</code> 关键字查询相关进程</li>
+<li><code>kill -9 [pid]</code> 通过进程编号杀掉指定进程</li>
+<li><code>unzip -o [filename].zip</code> 解压压缩文件</li>
+</ul>
+<h2 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h2><ul>
+<li><code>mysql -u [uaername] -p</code> 连接 mysql</li>
+<li><code>quit</code> 退出 mysql</li>
+<li><code>mysqldump -u [username] -p [database] &gt; [filename].sql --default-character-set=utf8</code> 导出数据库</li>
+<li><code>source [filename].sql;</code> 导入 sql</li>
+<li><code>create user &#39;[username]&#39;@&#39;[host]&#39; identified by &#39;[passwor]&#39;;</code> 创建 mysql 用户</li>
+<li><code>GRANT ALL PRIVILEGES ON [database].[table] TO &#39;[username]&#39;@&#39;[host]&#39; IDENTIFIED BY &#39;[password]&#39; WITH GRANT OPTION;</code> 授权</li>
+<li><code>flush privileges;</code> 刷新权限</li>
+</ul>
+<blockquote>
+<p>注意：【创建 mysql 用户】和【授权】操作后需执行【刷新权限】命令才能生效。</p>
+</blockquote>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><ul>
+<li><code>start nginx</code> 启动 nginx</li>
+<li><code>nginx -s stop</code> 关闭 nginx</li>
+<li><code>nginx -s reload</code> 刷新配置</li>
+</ul>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul>
+<li><code>nohup ./startup.sh &amp;</code> 启动 tomcat</li>
+<li><code>./shutdown.sh</code> 关闭 tomcat</li>
+</ul>
+<h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><ul>
+<li><code>nohup redis-server &amp;</code> 启动 redis</li>
+<li><code>./redis-cli shutdown</code> 关闭 redis</li>
+</ul>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul>
+<li><code>nohup java -jar [filename].jar &amp;</code> 启动 jar 包</li>
+</ul>
+<blockquote>
+<p>注意：可通过杀掉进程的方式关闭由 jar 包启动的 java 程序</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+        <tag>nginx</tag>
+        <tag>tomcat</tag>
+        <tag>redis</tag>
+        <tag>java</tag>
+        <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>springboot 项目使用 tomcat 部署到 linux 服务器</title>
     <url>/2022/04/02/springboot%20%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8%20tomcat%20%E9%83%A8%E7%BD%B2%E5%88%B0%20linux%20%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<p><img src="https://s2.loli.net/2022/05/31/dYrjIsCTQBR3hFw.webp" alt="tomcat"></p>
@@ -212,10 +270,10 @@
       </categories>
       <tags>
         <tag>工具</tag>
-        <tag>tomcat</tag>
-        <tag>springboot</tag>
-        <tag>java</tag>
         <tag>linux</tag>
+        <tag>tomcat</tag>
+        <tag>java</tag>
+        <tag>springboot</tag>
       </tags>
   </entry>
   <entry>
