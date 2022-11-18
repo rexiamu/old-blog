@@ -160,15 +160,19 @@
 <p>注意：【创建 mysql 用户】和【授权】操作后需执行【刷新权限】命令才能生效。</p>
 </blockquote>
 <h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><ul>
-<li><code>start nginx</code> 启动 nginx</li>
-<li><code>nginx -s stop</code> 关闭 nginx</li>
-<li><code>nginx -s reload</code> 刷新配置</li>
+<li><code>cd /usr/local/nginx/sbin/</code> 进入目录</li>
+<li><code>./nginx </code> 启动</li>
+<li><code>./nginx -s stop</code> 停止</li>
+<li><code>./nginx -s quit</code> 退出</li>
+<li><code>./nginx -s reload</code> 更新配置</li>
 </ul>
 <h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul>
+<li><code>/usr/local/tomcat/bin</code> 进入目录</li>
 <li><code>nohup ./startup.sh &amp;</code> 启动 tomcat</li>
 <li><code>./shutdown.sh</code> 关闭 tomcat</li>
 </ul>
 <h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><ul>
+<li><code>/usr/local/redis/bin</code> 进入目录</li>
 <li><code>nohup redis-server &amp;</code> 启动 redis</li>
 <li><code>./redis-cli shutdown</code> 关闭 redis</li>
 </ul>
