@@ -39,17 +39,21 @@ categories:
 
 ## nginx
 
-- `start nginx` 启动 nginx
-- `nginx -s stop` 关闭 nginx
-- `nginx -s reload` 刷新配置
+- `cd /usr/local/nginx/sbin/` 进入目录
+- `./nginx ` 启动
+- `./nginx -s stop` 停止
+- `./nginx -s quit` 退出
+- `./nginx -s reload` 更新配置
 
 ## tomcat
 
+- `/usr/local/tomcat/bin` 进入目录
 - `nohup ./startup.sh &` 启动 tomcat
 - `./shutdown.sh` 关闭 tomcat
 
 ## redis
 
+- `/usr/local/redis/bin` 进入目录
 - `nohup redis-server &` 启动 redis
 - `./redis-cli shutdown` 关闭 redis
 
